@@ -1,15 +1,12 @@
 import express from "express";
+import * as Db from "./db";
+import { ApolloServer } from "apollo-server-express";
+import { typeDefs } from "./schema/typeDefs";
+import { resolvers } from "./schema/resolvers";
 
-// Create Express server
+Db.connect();
+const server = new ApolloServer({ typeDefs, resolvers });
 const app = express();
+server.applyMiddleware({ app });
 
-app.get("/", function (req: any, res: any) {
-    res.send("Hello World");
-});
-
-app.listen(3000,() => {
-    console.log("server is running");
-}
-);
-
-export default app;
+app.listen({ port: 4000 }, () => console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`));

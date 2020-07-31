@@ -9,17 +9,21 @@
     "author": "Shiva kumar Mangina",
     "license": "MIT",
     "scripts": {
-        "build": "npm run build-ts && npm run lint",
-        "build-ts": "tsc",
+        "build": "tsc && npm run lint",
         "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
-        "serve": "node dist/app.js",
-        "start": "npm run serve",
-        "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
-        "watch-node": "nodemon dist/app.js",
-        "watch-ts": "tsc -w"
+        "start": "node dist/app.js",
+        "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc -w\" \"nodemon dist/app.js\""
     },
     "dependencies": {
-        "express": "^4.17.1"
+        "@types/graphql": "^14.5.0",
+        "@types/uuid": "^8.0.0",
+        "@types/validator": "^13.1.0",
+        "apollo-server-express": "^2.16.0",
+        "express": "^4.17.1",
+        "pg": "^8.3.0",
+        "pg-hstore": "^2.3.3",
+        "sequelize": "^6.3.3",
+        "uuid": "^8.3.0"
     },
     "devDependencies": {
         "@types/concurrently": "^4.1.1",
