@@ -2,15 +2,13 @@ import { v4 as uuid } from "uuid";
 import Quote from "../models/Quote";
 // Provide resolver functions for your schema fields
 const quotes: any = {};
-const addQuote = (quote: any) => {
-    // let response  = null;
-    const id = uuid();
-    return Quote.create({ id, phrase: "mango", quotee: "apple" });
-};
+
 export const resolvers = {
     Mutation: {
-        addQuote: async (parent: any, quote: any) => {
-            return addQuote(quote).;
+        addQuote: async (parent: any, ctx: any) => {
+            const id = uuid();
+            const q = await Quote.create({ id, phrase: ctx.phrase, quotee: ctx.quotee });
+            return { id: q.getDataValue("id"), phrase: q.getDataValue("phrase"), quotee: q.getDataValue("quotee") };
         },
         editQuote: async (parent: any, { id, ...quote }: any) => {
             if (!quotes[id]) {
@@ -32,6 +30,6 @@ export const resolvers = {
         }
     },
     Query: {
-        quotes: () => Object.values(quotes)
+        quotes: async () => await Quote.findAll({})
     }
 };
