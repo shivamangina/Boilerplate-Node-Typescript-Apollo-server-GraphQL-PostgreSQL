@@ -55,10 +55,20 @@ mutation Delete($id: ID!) {
 }
 
 ```
+## Deployment
+### To build
+
+`npm run build`
+
+## Build With
+* [GraphQL](https://www.npmjs.com/package/graphql) 
+* [Apollo Server Express](https://www.npmjs.com/package/apollo-server-express) 
+* [Sequelize](https://www.npmjs.com/package/sequelize) 
+* [TypeScript](https://www.npmjs.com/package/typescript) 
 
 ## Contributing
 
-Pull requests are welcome. For changes and Ideas, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For changes and Ideas, please open an issue to discuss what you would like to change.
 
 ### Leave a star if you like it⭐
 
