@@ -1,8 +1,7 @@
 import { v4 as uuid } from "uuid";
 import Quote from "../models/Quote";
-// Provide resolver functions for your schema fields
-const quotes: any = {};
 
+// Provide resolver functions for your schema fields
 export const resolvers = {
     Mutation: {
         addQuote: async (parent: any, ctx: any) => {
