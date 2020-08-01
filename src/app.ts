@@ -1,10 +1,10 @@
 import express from "express";
-import * as Db from "./db";
+import * as db from "./db";
 import { ApolloServer } from "apollo-server-express";
 import { typeDefs } from "./schema/typeDefs";
 import { resolvers } from "./schema/resolvers";
 
-Db.connect();
+db.connect();
 const server = new ApolloServer({ typeDefs, resolvers });
 const app = express();
 server.applyMiddleware({ app });

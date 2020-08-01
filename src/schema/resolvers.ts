@@ -10,23 +10,13 @@ export const resolvers = {
             const q = await Quote.create({ id, phrase: ctx.phrase, quotee: ctx.quotee });
             return { id: q.getDataValue("id"), phrase: q.getDataValue("phrase"), quotee: q.getDataValue("quotee") };
         },
-        editQuote: async (parent: any, { id, ...quote }: any) => {
-            if (!quotes[id]) {
-                throw new Error("Quote doesn't exist");
-            }
-
-            quotes[id] = {
-                ...quotes[id],
-                ...quote
-            };
-
-            return quotes[id];
+        editQuote: async (parent: any, ctx: any) => {
+            const q = await Quote.update({ phrase: ctx.phrase, quotee: ctx.quotee }, { where: { id: ctx.id }, returning: true });
+            return { id: q[1][0].getDataValue("id"), phrase: q[1][0].getDataValue("phrase"), quotee: q[1][0].getDataValue("quotee") };
         },
-        deleteQuote: async (parent: any, { id }: any) => {
-            const ok = Boolean(quotes[id]);
-            delete quotes[id];
-
-            return { ok };
+        deleteQuote: async (parent: any, ctx: any) => {
+            const q = await Quote.destroy({ where: { id: ctx.id } });
+            return { ok: q };
         }
     },
     Query: {
