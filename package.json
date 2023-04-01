@@ -15,8 +15,8 @@
         "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"tsc -w\" \"nodemon dist/app.js\""
     },
     "dependencies": {
-        "apollo-server-express": "^2.26.1",
-        "express": "^4.18.2",
+        "@apollo/server": "^4.5.0",
+        "graphql": "^16.6.0",
         "pg": "^8.10.0",
         "pg-hstore": "^2.3.4",
         "sequelize": "^6.30.0",
