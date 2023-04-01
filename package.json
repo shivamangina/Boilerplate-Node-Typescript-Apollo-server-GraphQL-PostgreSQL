@@ -4,7 +4,7 @@
     "description": "A starting point for Node.js express GraphQL with TypeScript",
     "repository": {
         "type": "git",
-        "url": "https://github.com/shivamangina/Boilerplate-Node-Typescript-Apollo-server-Express-GraphQL-PostgreSQL"
+        "url": "https://github.com/shivamangina/Boilerplate-Node-Typescript-Apollo-server-GraphQL-PostgreSQL"
     },
     "author": "Shiva kumar Mangina",
     "license": "MIT",

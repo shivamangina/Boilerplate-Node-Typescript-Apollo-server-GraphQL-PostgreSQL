@@ -1,10 +1,10 @@
-# Graphql Express Typescript Starter
+# Graphql Apollo Server Typescript Starter
 
 A starting point for graphql projects.
 
 ## Installation
 
-Use the package manager npm or yarn to install foobar.
+Use the package manager npm or yarn to install .
 
 ```bash
 git clone https://github.com/shivamangina/Boilerplate-Node-Typescript-Apollo-server-Express-GraphQL-PostgreSQL
@@ -62,7 +62,7 @@ mutation Delete($id: ID!) {
 
 ## Build With
 * [GraphQL](https://www.npmjs.com/package/graphql) 
-* [Apollo Server Express](https://www.npmjs.com/package/apollo-server-express) 
+* [Apollo Server](https://www.npmjs.com/package/@apollo/server) 
 * [Sequelize](https://www.npmjs.com/package/sequelize) 
 * [TypeScript](https://www.npmjs.com/package/typescript) 
 
