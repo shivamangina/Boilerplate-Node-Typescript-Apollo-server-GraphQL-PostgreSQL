@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 
-const sequelize = new Sequelize("postgres://postgres:12345@localhost:5432/todo");
+const sequelize = new Sequelize("postgres://tlcwtqrl:eu8KnhIiv4pv-gUYYGeex4kIuZXBzLp4@raja.db.elephantsql.com/tlcwtqrl");
 
 const connect = () => {
     try {
